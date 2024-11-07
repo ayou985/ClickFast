@@ -1,38 +1,79 @@
+/* Corps de la page avec un dégradé animé */
 body {
-    font-family: sans-serif;
-  }
-  
-  h1 {
-    font-family: fantasy;
-  }
-  
-  #container {
-    margin: 5rem;
-  }
+  font-family: sans-serif;
+  background: linear-gradient(45deg, #ff004f, #ffcc00);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  margin: 0;
+  padding: 0;
+}
 
-#button-clicker{
-    background-color: aquamarine;
-    border:none;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: all 0.3s;
-    &:hover {
-      scale: 1.1;
-    }
+/* Animation pour le fond dégradé */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-  
-.flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+
+/* Style du titre */
+h1 {
+  font-family: fantasy;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  margin-top: 2rem;
 }
-  
+
+/* Conteneur principal */
+#container {
+  margin: 5rem auto;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style du bouton avec effets */
+#button-clicker {
+  background-color: aquamarine;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#button-clicker:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+}
+
+#button-clicker:active {
+  transform: scale(0.9);
+}
+
+/* Flexbox pour centrer le contenu */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Slogan avec police et animation */
 .catchphrase {
-    font-size: 3rem;
-    margin: 3rem 0;
-    text-align: center;
+  font-size: 2.5rem;
+  margin: 3rem 0;
+  text-align: center;
+  color: white;
+  animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
