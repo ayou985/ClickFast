@@ -1,87 +1,112 @@
-/* Corps de la page avec un dégradé animé */
+/* Style général du body */
 body {
   font-family: sans-serif;
-  background: linear-gradient(45deg, #ff004f, #ffcc00);
-  background-size: 400% 400%;
-  animation: gradientAnimation 10s ease infinite;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-}
-
-/* Animation pour le fond dégradé */
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Style du titre */
-h1 {
-  font-family: fantasy;
-  text-align: center;
-  color: white;
-  font-size: 3rem;
-  margin-top: 2rem;
 }
 
 /* Conteneur principal */
-#container {
-  margin: 5rem auto;
-  max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-/* Style du bouton avec effets */
+/* Conteneur du jeu */
+#container {
+  background-color: #333;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+}
+
+/* Titre du jeu */
+h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Phrase d'accroche */
+.catchphrase {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Flexbox centré pour éléments */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sélecteur de durée */
+#time-select {
+  margin: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Minuteur */
+.timer {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+/* Compteur de clics */
+.number p {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Bouton de clic */
 #button-clicker {
-  background-color: aquamarine;
+  background-color: #00bcd4;
   border: none;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s;
+  display: none; /* Caché initialement */
 }
 
 #button-clicker:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+  background-color: #0097a7;
 }
 
-#button-clicker:active {
-  transform: scale(0.9);
-}
-
-/* Flexbox pour centrer le contenu */
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* Slogan avec police et animation */
-.catchphrase {
-  font-size: 2.5rem;
-  margin: 3rem 0;
-  text-align: center;
-  color: white;
-  animation: fadeIn 2s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.timer {
-  font-size: 2rem;
-  color: white;
-  margin-bottom: 2rem;
+/* Bouton démarrer */
+#start-game {
+  background-color: #4caf50;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
   font-weight: bold;
-  animation: fadeIn 2s ease-out;
+}
+
+#start-game:hover {
+  transform: scale(1.1);
+  background-color: #388e3c;
+}
+
+/* Effet d'animation pour le fade-in */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

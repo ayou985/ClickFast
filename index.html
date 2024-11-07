@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-
     <title>ClickFast</title>
 </head>
 
@@ -13,28 +12,43 @@
     <div id="main">
         <div id="container">
             <h1 class="flex">ClickFast ⏩</h1>
-            <p class="catchphrase">
             <p class="catchphrase">Sois le plus rapide des clickers du game ⚡</p>
-            </p>
 
+            <!-- Sélecteur de durée du jeu -->
+            <div class="flex-center">
+                <label for="time-select">Sélectionnez la durée :</label>
+                <select id="time-select">
+                    <option value="10">10 secondes</option>
+                    <option value="30">30 secondes</option>
+                    <option value="60">1 minute</option>
+                </select>
+            </div>
+
+            <!-- Minuteur -->
+            <div id="container" class="flex-center">
+                <div id="timer" class="timer">00:00</div>
+            </div>
+
+            <!-- Score / compteur de clics -->
             <div class="flex-center">
                 <div class="number">
                     <p id="counter">0</p>
                 </div>
             </div>
+
+            <!-- Bouton pour cliquer (initialement caché) -->
             <div class="flex-center">
-                <button id="button-clicker">Click !!!</button>
-            </div>
-            <div id="container" class="flex-center">
-                <div id="timer" class="timer">00:00</div>
+                <button id="button-clicker" disabled>Click !!!</button>
             </div>
 
-            
-            
+            <!-- Bouton démarrer (affiché uniquement avant le début du jeu) -->
+            <div class="flex-center">
+                <button id="start-game">Démarrer le jeu</button>
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
