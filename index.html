@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8" />
@@ -14,8 +14,7 @@
             <h1 class="flex">ClickFast ⏩</h1>
             <p class="catchphrase">Sois le plus rapide des clickers du game ⚡</p>
 
-            <!-- Sélecteur de durée du jeu -->
-            <div class="flex-center">
+             <div class="flex-center">
                 <label for="time-select">Sélectionnez la durée :</label>
                 <select id="time-select">
                     <option value="10">10 secondes</option>
@@ -24,27 +23,38 @@
                 </select>
             </div>
 
-            <!-- Minuteur -->
-            <div id="container" class="flex-center">
+             <div id="container" class="flex-center">
                 <div id="timer" class="timer">00:00</div>
             </div>
 
-            <!-- Score / compteur de clics -->
-            <div class="flex-center">
+             <div class="flex-center">
                 <div class="number">
                     <p id="counter">0</p>
                 </div>
             </div>
 
-            <!-- Bouton pour cliquer (initialement caché) -->
-            <div class="flex-center">
+             <div class="flex-center">
                 <button id="button-clicker" disabled>Click !!!</button>
             </div>
 
-            <!-- Bouton démarrer (affiché uniquement avant le début du jeu) -->
-            <div class="flex-center">
+             <div class="flex-center">
                 <button id="start-game">Démarrer le jeu</button>
             </div>
+
+             <div id="end-popup" class="popup">
+                <div class="popup-content">
+                    <h2>🎉 Bravo ! 🎉</h2>
+                    <p>Tu as cliqué <span id="final-clicks">0</span> fois en <span id="game-duration">0</span> secondes!</p>
+                    <button id="replay-button">Rejouer</button>
+                </div>
+            </div>
+
+             <h2>Rechercher une musique pour te mettre aux max !!! :</h2>
+            <input type="text" id="searchInput" placeholder="Rechercher une musique..." onkeydown="if(event.key === 'Enter') searchMusic()">
+            <div id="musicResults"></div>
+           
+            
+
         </div>
     </div>
 

@@ -1,4 +1,3 @@
-/* Style général du body */
 body {
   font-family: sans-serif;
   background-color: #f0f0f0;
@@ -9,7 +8,6 @@ body {
   margin: 0;
 }
 
-/* Conteneur principal */
 #main {
   display: flex;
   justify-content: center;
@@ -17,7 +15,6 @@ body {
   flex-direction: column;
 }
 
-/* Conteneur du jeu */
 #container {
   background-color: #333;
   padding: 2rem;
@@ -27,27 +24,23 @@ body {
   color: white;
 }
 
-/* Titre du jeu */
 h1 {
   font-family: 'Arial', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-/* Phrase d'accroche */
 .catchphrase {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
-/* Flexbox centré pour éléments */
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Sélecteur de durée */
 #time-select {
   margin: 1rem;
   padding: 0.5rem;
@@ -57,7 +50,6 @@ h1 {
   border-radius: 5px;
 }
 
-/* Minuteur */
 .timer {
   font-size: 2rem;
   color: white;
@@ -65,13 +57,11 @@ h1 {
   font-weight: bold;
 }
 
-/* Compteur de clics */
 .number p {
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-/* Bouton de clic */
 #button-clicker {
   background-color: #00bcd4;
   border: none;
@@ -81,7 +71,7 @@ h1 {
   font-size: 1.5rem;
   font-weight: bold;
   transition: all 0.3s;
-  display: none; /* Caché initialement */
+  display: none; 
 }
 
 #button-clicker:hover {
@@ -89,7 +79,7 @@ h1 {
   background-color: #0097a7;
 }
 
-/* Bouton démarrer */
+
 #start-game {
   background-color: #4caf50;
   border: none;
@@ -105,8 +95,167 @@ h1 {
   background-color: #388e3c;
 }
 
-/* Effet d'animation pour le fade-in */
+
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); 
+  display: none; 
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+.popup-content {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  width: 80%;
+  max-width: 400px;
+  animation: zoomIn 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.popup-content h2 {
+  font-size: 2.5rem;
+  color: #ffdd57; 
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+
+.popup-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+
+#replay-button {
+  background: linear-gradient(45deg, #ff6b6b, #f06595);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+#replay-button:hover {
+  transform: scale(1.1);
+}
+
+
+@keyframes zoomIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+#searchInput {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid #4a90e2;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #1d6fa5;
+  box-shadow: 0 0 8px rgba(26, 115, 232, 0.5);
+}
+
+
+#musicResults {
+  width: 80%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+#musicResults div {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#musicResults div:hover {
+  background-color: #f1f8ff;
+  border-color: #4a90e2;
+}
+
+
+#musicResults button {
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#musicResults button:hover {
+  background-color: #1d6fa5;
+}
+
+
+#videoPlayer {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+#progressBar {
+  width: 100%;
+  height: 8px;
+  appearance: none;
+  background: #ddd;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#progressBar::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  background: #4a90e2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#progressBar::-webkit-slider-thumb:hover {
+  background: #1d6fa5;
 }
